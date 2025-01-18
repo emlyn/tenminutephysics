@@ -1076,14 +1076,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		scene.paused = false;
 	}
 
-	function drag(x, y) {
+	function drag(x, y, isOut) {
 		if (mouseDown) {
 			let bounds = canvas.getBoundingClientRect();
 			let mx = x - bounds.left - canvas.clientLeft;
 			let my = y - bounds.top - canvas.clientTop;
-			x = mx / cScale;
-			y = (canvas.height - my) / cScale;
-			setObstacle(x,y, false);
+			x = clamp(mx / cScale, 0, simWidth);
+			y = clamp((canvas.height - my) / cScale, 0, simHeight);
+			setObstacle(x,y, isOut);
 		}
 	}
 
@@ -1103,6 +1103,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 	canvas.addEventListener('mousemove', event => {
 		drag(event.x, event.y);
+	});
+
+	canvas.addEventListener('mouseout', event => {
+		drag(event.x, event.y, true);
+	});
+
+	canvas.addEventListener('mouseenter', event => {
+		drag(event.x, event.y, true);
 	});
 
 	canvas.addEventListener('touchstart', event => {
