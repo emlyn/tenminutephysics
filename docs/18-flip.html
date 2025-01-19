@@ -98,8 +98,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			// fluid
 
 			this.density = density;
-			this.fNumX = Math.floor(width / spacing) + 1;
-			this.fNumY = Math.floor(height / spacing) + 1;
+			this.fNumX = Math.floor(width / spacing);
+			this.fNumY = Math.floor(height / spacing);
 			this.h = Math.max(width / this.fNumX, height / this.fNumY);
 			this.fInvSpacing = 1.0 / this.h;
 			this.fNumCells = this.fNumX * this.fNumY;
