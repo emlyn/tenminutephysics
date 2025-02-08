@@ -33,12 +33,8 @@ tbody tr td:first-child {
   min-width: 200px;
   max-width: 200px;
 }
-.paperButton:hover {
-  background-color: #777777;
-  color: white;
-}
 .button {
-  background-color: #555555;
+  background-color: #aaa;
   border: none;
   color: white;
   padding: 5px 5px;
@@ -49,17 +45,28 @@ tbody tr td:first-child {
   display: inline-block;
   font-size: 14px;
 }
-.buttonYoutube {
-  background-color: #FF0000;
-  border: none;
+.button:hover {
+  background-color: #ccc;
   color: white;
-  padding: 8px 8px;
-  margin: 5px 0px 5px 0px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
+}
+.button.video {
+  background-color: #555;
+}
+.button.video:hover {
+  background-color: #888;
+  color: white;
+}
+.button.new {
+  background-color: #d70;
+}
+.button.new:hover {
+  background-color: #e80;
+}
+.button.change {
+  background-color: #070;
+}
+.button.change:hover {
+  background-color: #090;
 }
 .paperImage {
 	width: 170px;
@@ -70,14 +77,16 @@ tbody tr td:first-child {
 
 <body>
 <div class = "title" >Ten Minute Physics (ish)</div>
-  <br>
+<br>
 This is a copy of the <a href="https://matthias-research.github.io/pages/tenMinutePhysics/">page</a> accompanying Matthias Müller's youtube channel
 <a href="https://www.youtube.com/@tenminutephysics">Ten Minute Physics.</a> Where in short episodes of about ten minutes he explains the basic concepts
 of physically based simulation. Each time he writes a little javascript demo that runs in any browswer.
 These are my tweaks to those demos.
 <br>
+Any demos that have modifications by me will have their buttons highlighted like this: <a disabled class="button change">Demo</a>
 <br>
-<a href = "https://www.youtube.com/channel/UCTG_vrRdKYfrpqCv_WV4eyA" class="buttonYoutube">Youtube</a>
+Any demos that I have added will have their buttons highlighted like this: <a disabled class="button new">Demo</a>
+<br>
 <br>
 <h2>Tutorials</h2>
 <table id = "pubTable">
@@ -90,7 +99,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I exmpalain how write a basic rigid body simulator. This tutorial is the start of a series on rigid body simulation.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/euypZDssYxE" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/euypZDssYxE" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/22-rigidBodies.html" target="_blank" class="button">Code</a>
       <a href = "22-rigidBodies.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/22-rigidBodies.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -105,7 +114,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I explain how to write a fire simulator based on the Eulerian fluid simulator discussed in tutorial 17.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/RsgmS3ZxDtc" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/RsgmS3ZxDtc" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/21-fire.html" target="_blank" class="button">Code</a>
       <a href = "21-fire.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/21-fire.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -120,7 +129,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I explain how to simulate water as a height field and its two-way interaction with solid objects.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/hswBi5wcqAA" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/hswBi5wcqAA" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/20-heightFieldWater.html" target="_blank" class="button">Code</a>
       <a href = "20-heightFieldWater.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/20-heightFieldWater.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -135,7 +144,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I start with simple algebra and derive calculus, differential equations and the most famous mathematical constants in one train of thought.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/asiFbvRKgRk" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/asiFbvRKgRk" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/19-julia.html" target="_blank" class="button">Code</a>
       <a href = "19-julia.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/19-ODE.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -150,9 +159,9 @@ These are my tweaks to those demos.
       </div>In this tutorial I explain the FLIP method. It is an extension of the Eulerian fluid simulation method which uses particles to distinguish air from water cells.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/XmzBREkK8kY" target="_blank" class="button">Video</a>
-      <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/18-flip.html" target="_blank" class="button">Code</a>
-      <a href = "18-flip.html" target="_blank" class="button">Demo</a>
+      <a href = "https://youtu.be/XmzBREkK8kY" target="_blank" class="button video">Video</a>
+      <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/18-flip.html" target="_blank" class="button change">Code</a>
+      <a href = "18-flip.html" target="_blank" class="button change">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/18-flip.pdf" target="_blank" class="button">Notes (PDF)</a>
       </td>
     </tr>
@@ -165,7 +174,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I explain the basics of Eulerian, grid-based fluid simulation and  show how to write a simulation engine based on these discussed concepts.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/iKAVRgIrUOU" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/iKAVRgIrUOU" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/17-fluidSim.html" target="_blank" class="button">Code</a>
       <a href = "17-fluidSim.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/17-fluidSim.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -180,7 +189,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I give a short introduction to simulating on the GPU. I use python in connection with the nvidia python extension warp as a simple way to write GPU simulations.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/q4rNoupGr8U" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/q4rNoupGr8U" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/16-GPUCloth.py" target="_blank" class="button">Code</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/16-GPUSimulation.pdf" target="_blank" class="button">Notes (PDF)</a>
       </td>
@@ -194,7 +203,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I give you 5 tricks for stably handling cloth self-collisions. We use the cloth simulation of tutorial 14 and the hash grid introduced in tutorial 11.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/XY3dLpgOk4Q" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/XY3dLpgOk4Q" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/15-selfCollision.html" target="_blank" class="button">Code</a>
       <a href = "15-selfCollision.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/15-selfCollision.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -209,7 +218,7 @@ These are my tweaks to those demos.
         </div>In this tutorial I reveal the secret of cloth simulation. I use it to write a very fast and stable cloth demo that simulates 6400 triangles at more than 30 fps on a cell phone in javascript.
         <div class = "description">
         </div>
-        <a href = "https://youtu.be/z5oWopN39OU" target="_blank" class="button">Video</a>
+        <a href = "https://youtu.be/z5oWopN39OU" target="_blank" class="button video">Video</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/14-cloth.html" target="_blank" class="button">Code</a>
         <a href = "14-cloth.html" target="_blank" class="button">Demo</a>
           <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/14-cloth.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -224,7 +233,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I explain how to create a tetrahedral mesh for a surface mesh using the incremental Delaunay method. I also briefly discuss the implementation as a python blender plugin.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/sNxz_Ht6Y1Y" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/sNxz_Ht6Y1Y" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/BlenderTetPlugin.py" target="_blank" class="button">Plugin</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/13-Tetrahedralize.pdf" target="_blank" class="button">Notes (PDF)</a>
       </td>
@@ -238,7 +247,7 @@ These are my tweaks to those demos.
       </div>In this tutorial I show how to speedup soft body simulation by 100x by embedding a high detail visual mesh into a low resolution tetrahedral simulation mesh.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/Noo5sfGGWe0" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/Noo5sfGGWe0" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/12-softBodySkinning.html" target="_blank" class="button">Code</a>
       <a href = "12-softBodySkinning.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/12-softBodySkinning.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -254,7 +263,7 @@ These are my tweaks to those demos.
         I also show how to implement it in a very efficient way.
         <div class = "description">
         </div>
-        <a href = "https://youtu.be/D2M8jTtKi44" target="_blank" class="button">Video</a>
+        <a href = "https://youtu.be/D2M8jTtKi44" target="_blank" class="button video">Video</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/11-hashing.html" target="_blank" class="button">Code</a>
         <a href = "11-hashing.html" target="_blank" class="button">Demo</a>
           <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/11-hashing.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -272,7 +281,7 @@ These are my tweaks to those demos.
       I recommend to watch tutorial 9 first.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/uCaHXkS2cUg" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/uCaHXkS2cUg" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/10-softBodies.html" target="_blank" class="button">Code</a>
       <a href = "10-softBodies.html" target="_blank" class="button">Demo</a>
         <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/10-softBodies.pdf" target="_blank" class="button">Notes (PDF)</a>
@@ -289,7 +298,7 @@ These are my tweaks to those demos.
       However, I highly recommend to watch tutorial 7 first to refresh your 3d math.
       <div class = "description">
       </div>
-      <a href = "https://youtu.be/jrociOAYqxA" target="_blank" class="button">Video</a>
+      <a href = "https://youtu.be/jrociOAYqxA" target="_blank" class="button video">Video</a>
       <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/09-xpbd.pdf" target="_blank" class="button">Notes (PDF)</a>
       </td>
     </tr>
@@ -302,7 +311,7 @@ These are my tweaks to those demos.
     </div>In this tutorial I show how to enable the user to pick up move and throw objects in a 3d scene. For this I introduce the concepts of a mouse ray and ray casting.
     <div class = "description">
     </div>
-    <a href = "https://youtu.be/iH_UgUb-LYM" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/iH_UgUb-LYM" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/08-interaction.html" target="_blank" class="button">Code</a>
     <a href = "08-interaction.html" target="_blank" class="button">Demo</a>
   </td>
@@ -318,7 +327,7 @@ These are my tweaks to those demos.
     I explain my personal intuitions behind the concepts which I developed over time.
     <div class = "description">
     </div>
-    <a href = "https://youtu.be/hRz3sh7QQ6w" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/hRz3sh7QQ6w" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/tenMinutePhysics/07-3dmath.pdf" target="_blank" class="button">Notes (PDF)</a>
   </td>
   </tr>
@@ -333,7 +342,7 @@ These are my tweaks to those demos.
       with Position based dynamics. They can be used to simulate a large variety of objects like
       cloth, ropes, hair, fur, sand and many more. To demonstrate the accuracy of PBD we will write a triple pendulum simulation.
     </div>
-    <a href = "https://youtu.be/XPZEeS70zzU" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/XPZEeS70zzU" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/06-pendulumShort.html" target="_blank" class="button">Short Code</a>
     <a href = "06-pendulumShort.html" target="_blank" class="button">Short Demo</a>
     &nbsp; &nbsp; &nbsp;
@@ -352,15 +361,15 @@ These are my tweaks to those demos.
       I apply it to the circle on wire problem and compare it to the analytic solution to
       demonstrate its accuracy.
     </div>
-    <a href = "https://youtu.be/qISgdDhdCro" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/qISgdDhdCro" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/05-bead.html" target="_blank" class="button">Code</a>
     <a href = "05-bead.html" target="_blank" class="button">Demo</a>
     &nbsp; &nbsp; &nbsp;
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/05-manyBeads.html" target="_blank" class="button">Code</a>
     <a href = "05-manyBeads.html" target="_blank" class="button">Demo</a>
     &nbsp; &nbsp; &nbsp;
-    <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/05-cradle.html" target="_blank" class="button">Code</a>
-    <a href = "05-cradle.html" target="_blank" class="button">Demo</a>
+    <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/05-cradle.html" target="_blank" class="button new">Code</a>
+    <a href = "05-cradle.html" target="_blank" class="button new">Demo</a>
     &nbsp; &nbsp; &nbsp;
   </td>
   </tr>
@@ -372,7 +381,7 @@ These are my tweaks to those demos.
     <div class = "tutorialTitle">04 How to write a pinball simulation</div>
     <div class = "description">I show you how to handle ball - capsule collisions and collisions against arbitrary boundaries represented by segments. 
       I also show how to handle touch and mouse events.</div>
-    <a href = "https://youtu.be/NhVUCsXp-Uo" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/NhVUCsXp-Uo" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/04-pinball.html" target="_blank" class="button">Code</a>
     <a href = "04-pinball.html" target="_blank" class="button">Demo</a>
     &nbsp; &nbsp; &nbsp;
@@ -385,7 +394,7 @@ These are my tweaks to those demos.
   <td>
     <div class = "tutorialTitle">03 - Ball collision handling in 2d</div>
     <div class = "description">I show how to handle collisions of balls in 2d while creating a billiard scene.</div>
-    <a href = "https://youtu.be/ThhdlMbGT5g" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/ThhdlMbGT5g" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/03-billiard.html" target="_blank" class="button">Code</a>
     <a href = "03-billiard.html" target="_blank" class="button">Demo</a>
       &nbsp; &nbsp; &nbsp;
@@ -398,7 +407,7 @@ These are my tweaks to those demos.
   <td>
     <div class = "tutorialTitle">02 - Introduction to 3d and VR web browser physics</div>
     <div class = "description">We make our cannonball 3d and turn it into a VR demo using the graphics engine THREE.js.</div>
-    <a href = "https://youtu.be/j84zJ06wnVA" target="_blank" class="button">Video</a>
+    <a href = "https://youtu.be/j84zJ06wnVA" target="_blank" class="button video">Video</a>
     <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/02-cannonball3d.html" target="_blank" class="button">Code</a>
     <a href = "02-cannonball3d.html" target="_blank" class="button">Demo</a>
     &nbsp; &nbsp; &nbsp;
@@ -414,7 +423,7 @@ These are my tweaks to those demos.
   <td>
   <div class = "tutorialTitle">01 - Introduction to 2d web browser physics</div>
   <div class = "description">I give a brief intoduction to this channel and to physics. After that we write a 2d cannonball simulation.</div>
-  <a href = "https://youtu.be/oPuSvdBGrpE" target="_blank" class="button">Video</a>
+  <a href = "https://youtu.be/oPuSvdBGrpE" target="_blank" class="button video">Video</a>
   <a href = "https://github.com/emlyn/tenminutephysics/blob/main/docs/01-cannonball2d.html" target="_blank" class="button">Code</a>
   <a href = "01-cannonball2d.html" target="_blank" class="button">Demo</a>
   &nbsp; &nbsp; &nbsp;
